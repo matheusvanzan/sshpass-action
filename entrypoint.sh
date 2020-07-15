@@ -4,16 +4,13 @@ set -e
 echo "#################################################"
 echo "Starting ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
 
-
 HOST=$1
-USERNAME=$2
-PASSWORD=$3
+USERNAME=$2     
 RUN=$4
+export SSHPASS=$3
 
-echo "HOST $HOST"
-echo "USERNAME $USERNAME"
-echo "PASSWORD $PASSWORD"
-echo "RUN $RUN"
+CMD="${RUN/$'\n'/' && '}"
+sshpass -e ssh -o StrictHostKeyChecking=no $USERNAME@$HOST "$CMD && exit"
 
 echo "#################################################"
 echo "Completed ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
