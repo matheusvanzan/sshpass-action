@@ -1,0 +1,28 @@
+name: SSHPASS Github Action
+inputs:
+  host:
+    description: "SSHPASS host"
+    required: true
+  username:
+    description: "SSHPASS username"
+    required: true
+  password:
+    description: "SSHPASS password"
+    required: true
+  run:
+    description: "SSHPASS commands to run"
+    required: true
+
+description: 'SSHPASS Github Action'
+branding:
+  icon: box
+  color: gray-dark
+runs-on: alpine-3.9
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - ${{ inputs.host }}
+  - ${{ inputs.username }}
+  - ${{ inputs.password }}
+  - ${{ inputs.run }}
