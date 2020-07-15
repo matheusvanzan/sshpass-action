@@ -7,10 +7,12 @@ Github Action to send commands via SSHPASS
 
 ```
 - uses: matheusvanzan/sshpass-action@master
-- with:
-    - host: ${{ secrets.SERVER_HOST }}
-    - username: ${{ secrets.SERVER_USERNAME }}
-    - password: ${{ secrets.SERVER_PASSWORD }}
-    - run: |
-        # your multiline bash commands
+- name: Run sshpass commands
+    with:
+    host: ${{ secrets.SERVER_HOST }}
+    username: ${{ secrets.SERVER_USERNAME }}
+    password: ${{ secrets.SERVER_PASSWORD }}
+    run: |
+        pwd
+        ls -lha
 ```
