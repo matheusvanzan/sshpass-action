@@ -1,6 +1,6 @@
-# sshpass-action
+# SSHPASS Github Action
 
-Github Action to send commands via SSPHPASS
+Github Action to send commands via SSHPASS
 
 
 ## Usage
