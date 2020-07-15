@@ -15,7 +15,7 @@ inputs:
 
 description: 'SSHPASS Github Action'
 branding:
-  icon: box
+  icon: dollar-sign
   color: gray-dark
 runs-on: ubuntu-18.04
 runs:
