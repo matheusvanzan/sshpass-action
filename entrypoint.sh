@@ -10,7 +10,7 @@ RUN=$4
 export SSHPASS=$3
 
 CMD="${RUN/$'\n'/' && '}"
-sshpass -e ssh -o StrictHostKeyChecking=no $USERNAME@$HOST "$CMD && exit"
+sshpass -e ssh -o StrictHostKeyChecking=no $USERNAME@$HOST "$CMD"
 
 echo "#################################################"
 echo "Completed ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
