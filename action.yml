@@ -6,6 +6,7 @@ inputs:
   port:
     description: "SSHPASS port"
     required: false
+    default: 22
   username:
     description: "SSHPASS username"
     required: true
@@ -26,6 +27,7 @@ runs:
   image: 'Dockerfile'
   env:
     HOST: ${{ inputs.host }}
+    PORT: ${{ inputs.port }}
     USERNAME: ${{ inputs.username }}
     PASSWORD: ${{ inputs.password }}
     RUN: ${{ inputs.run }}
