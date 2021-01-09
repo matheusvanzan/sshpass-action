@@ -26,8 +26,8 @@ then
     export SSHPASS=$PASS
     sshpass -e ssh -o StrictHostKeyChecking=no -p $PORT $USER@$HOST "$CMD"
 
-else # Certificate
-    echo "Using certificate"
+else # Private key
+    echo "Using private key"
     mkdir "$HOME/.ssh"
     echo "$KEY" > "$HOME/.ssh/id_rsa"
     chmod 400 "$HOME/.ssh/id_rsa"

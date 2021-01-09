@@ -31,7 +31,7 @@ runs:
   env:
     HOST: ${{ inputs.host }}
     PORT: ${{ inputs.port }}
-    USERNAME: ${{ inputs.username }}
-    PASSWORD: ${{ inputs.password }}
+    USER: ${{ inputs.user }}
+    PASS: ${{ inputs.pass }}
     KEY: ${{ inputs.key }}
     RUN: ${{ inputs.run }}

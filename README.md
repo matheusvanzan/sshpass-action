@@ -12,8 +12,8 @@ Example usage can be found at [sshpass-action-example](https://github.com/matheu
   uses: matheusvanzan/sshpass-action@v1.1
   with:
     host: ${{ secrets.SERVER_HOST }}
-    user: ${{ secrets.SERVER_USERNAME }}
-    pass: ${{ secrets.SERVER_PASSWORD }}
+    user: ${{ secrets.SERVER_USER }}
+    pass: ${{ secrets.SERVER_PASS }}
     run: |
       # your 
       # commands
@@ -28,8 +28,8 @@ Optional ssh port
   with:
     host: ${{ secrets.SERVER_HOST }}
     port: 22
-    user: ${{ secrets.SERVER_USERNAME }}
-    pass: ${{ secrets.SERVER_PASSWORD }}
+    user: ${{ secrets.SERVER_USER }}
+    pass: ${{ secrets.SERVER_PASS }}
     run: |
       # your 
       # commands
@@ -43,7 +43,7 @@ Optional private key. In this case it will ignore the password if provided.
   uses: matheusvanzan/sshpass-action@v1.1
   with:
     host: ${{ secrets.SERVER_HOST }}
-    user: ${{ secrets.SERVER_USERNAME }}
+    user: ${{ secrets.SERVER_USER }}
     key: ${{ secrets.SERVER_KEY }}
     run: |
       # your 
