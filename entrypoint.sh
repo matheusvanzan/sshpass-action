@@ -23,9 +23,10 @@ then
 else # Private key
     echo "Using private key"
     mkdir "$HOME/.ssh"
+    ls -lha "$HOME"
     echo "$INPUT_KEY" > "$HOME/.ssh/id_rsa"
     chmod 400 "$HOME/.ssh/id_rsa"
-    ls -lha "$HOME/.ssh/id_rsa/"
+    ls -lha "$HOME/.ssh/id_rsa"
     sshpass ssh -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
 
