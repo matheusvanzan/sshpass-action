@@ -7,10 +7,10 @@ inputs:
     description: "SSHPASS port"
     required: false
     default: 22
-  username:
+  user:
     description: "SSHPASS username"
     required: true
-  password:
+  pass:
     description: "SSHPASS password"
     required: false
   key:
