@@ -3,6 +3,9 @@ inputs:
   host:
     description: "SSHPASS host"
     required: true
+  port:
+    description: "SSHPASS port"
+    required: false
   username:
     description: "SSHPASS username"
     required: true
@@ -21,8 +24,8 @@ runs-on: ubuntu-18.04
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-  - ${{ inputs.host }}
-  - ${{ inputs.username }}
-  - ${{ inputs.password }}
-  - ${{ inputs.run }}
+  env:
+    HOST: ${{ inputs.host }}
+    USER: ${{ inputs.username }}
+    PASS: ${{ inputs.password }}
+    RUN: ${{ inputs.run }}

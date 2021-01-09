@@ -9,9 +9,10 @@ Example usage can be found at [sshpass-action-example](https://github.com/matheu
 
 ```
 - name: Run sshpass commands
-  uses: matheusvanzan/sshpass-action@v1
+  uses: matheusvanzan/sshpass-action@v1.1
   with:
     host: ${{ secrets.SERVER_HOST }}
+    port: ${{ secrets.SERVER_POST }}
     username: ${{ secrets.SERVER_USERNAME }}
     password: ${{ secrets.SERVER_PASSWORD }}
     run: |
