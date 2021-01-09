@@ -26,7 +26,7 @@ else # Private key
     ls -lha "$HOME"
     echo "$INPUT_KEY" > "$HOME/.ssh/id_rsa"
     chmod 400 "$HOME/.ssh/id_rsa"
-    ls -lha "$HOME/.ssh/id_rsa"
+    ls -lha "$HOME/.ssh/"
     sshpass ssh -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
 
