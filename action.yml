@@ -26,6 +26,6 @@ runs:
   image: 'Dockerfile'
   env:
     HOST: ${{ inputs.host }}
-    USER: ${{ inputs.username }}
-    PASS: ${{ inputs.password }}
+    USERNAME: ${{ inputs.username }}
+    PASSWORD: ${{ inputs.password }}
     RUN: ${{ inputs.run }}
