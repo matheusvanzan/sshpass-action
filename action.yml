@@ -13,8 +13,8 @@ inputs:
   password:
     description: "SSHPASS password"
     required: false
-  cert:
-    description: "SSHPASS certificate"
+  key:
+    description: "SSHPASS private key"
     required: false
   run:
     description: "SSHPASS commands to run"
