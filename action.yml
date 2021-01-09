@@ -12,7 +12,10 @@ inputs:
     required: true
   password:
     description: "SSHPASS password"
-    required: true
+    required: false
+  cert:
+    description: "SSHPASS certificate"
+    required: false
   run:
     description: "SSHPASS commands to run"
     required: true
@@ -30,4 +33,5 @@ runs:
     PORT: ${{ inputs.port }}
     USERNAME: ${{ inputs.username }}
     PASSWORD: ${{ inputs.password }}
+    CERT: ${{ inputs.cert }}
     RUN: ${{ inputs.run }}
