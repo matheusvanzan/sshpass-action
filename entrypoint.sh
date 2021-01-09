@@ -4,24 +4,19 @@ set -e
 echo "#################################################"
 echo "Starting ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
 
-echo "Args: $@"
+# Available env
+# INPUT_HOST
+# INPUT_USER
+# INPUT_PASS
+# INPUT_RUN
 
-echo "host: ${HOST}"
-env
-
-# HOST=$1
-# USERNAME=$2     
-# export SSHPASS=$3
-# RUN=$4
-# PORT=$5
-
-# if [ -z "$PORT" ] 
-# then
-#     PORT=22
-# fi
+echo "INPUT_HOST: ${INPUT_HOST}"
+echo "INPUT_USER: ${INPUT_USER}"
+echo "INPUT_PASS: ${INPUT_PASS}"
+echo "INPUT_RUN: ${INPUT_RUN}"
 
 CMD="${RUN/$'\n'/' && '}"
-# sshpass -e ssh -o StrictHostKeyChecking=no -p $PORT $USERNAME@$HOST "$CMD"
+sshpass -e ssh -o StrictHostKeyChecking=no $INPUT_USER@$INPUT_HOST "$INPUT_RUN"
 
 echo "#################################################"
 echo "Completed ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
