@@ -22,18 +22,18 @@ then
 
 else # Private key
     echo "Using private key"
-    mkdir "$HOME/.ssh"
+    mkdir "/root/.ssh"
 
-    echo "$INPUT_KEY" > "$HOME/.ssh/id_rsa"
-    chmod 400 "$HOME/.ssh/id_rsa"
+    echo "$INPUT_KEY" > "/root/.ssh/id_rsa"
+    chmod 400 "/root/.ssh/id_rsa"
 
-    echo "Host *" > "$HOME/.ssh/config"
-    echo "  AddKeysToAgent yes" >> "$HOME/.ssh/config"
-    echo "  IdentityFile ~/.ssh/id_rsa" >> "$HOME/.ssh/config"
+    echo "Host *" > "/root/.ssh/config"
+    echo "  AddKeysToAgent yes" >> "/root/.ssh/config"
+    echo "  IdentityFile ~/.ssh/id_rsa" >> "/root/.ssh/config"
 
-    cat "$HOME/.ssh/config"
+    cat "/root/.ssh/config"
 
-    ls -lha "$HOME/.ssh/"
+    ls -lha "/root/.ssh/"
     sshpass ssh -v -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
 
