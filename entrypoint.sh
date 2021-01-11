@@ -29,7 +29,6 @@ else # Private key
 
     echo "Host *" > "$HOME/.ssh/config"
     echo "  AddKeysToAgent yes" >> "$HOME/.ssh/config"
-    echo "  UseKeychain yes" >> "$HOME/.ssh/config"
     echo "  IdentityFile ~/.ssh/id_rsa" >> "$HOME/.ssh/config"
 
     cat "$HOME/.ssh/config"
