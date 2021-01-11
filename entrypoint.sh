@@ -32,6 +32,8 @@ else # Private key
     echo "  UseKeychain yes" >> "$HOME/.ssh/config"
     echo "  IdentityFile ~/.ssh/id_rsa" >> "$HOME/.ssh/config"
 
+    cat "$HOME/.ssh/config"
+
     ls -lha "$HOME/.ssh/"
     sshpass ssh -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
