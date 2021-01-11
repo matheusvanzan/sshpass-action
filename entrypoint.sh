@@ -22,6 +22,7 @@ then
 
 else # Private key
     echo "Using private key"
+    pwd
     mkdir "/root/.ssh"
 
     echo "$INPUT_KEY" > "/root/.ssh/id_rsa"
@@ -29,7 +30,7 @@ else # Private key
 
     echo "Host *" > "/root/.ssh/config"
     echo "  AddKeysToAgent yes" >> "/root/.ssh/config"
-    echo "  IdentityFile ~/.ssh/id_rsa" >> "/root/.ssh/config"
+    echo "  IdentityFile /root/.ssh/id_rsa" >> "/root/.ssh/config"
 
     cat "/root/.ssh/config"
 
