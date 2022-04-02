@@ -35,7 +35,7 @@ else # Private key
     cat "/root/.ssh/config"
 
     ls -lha "/root/.ssh/"
-    sshpass ssh -v -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
+    sshpass ssh -v -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
 
 echo "#################################################"
