@@ -5,12 +5,12 @@ echo "#################################################"
 echo "Starting ${GITHUB_WORKFLOW}:${GITHUB_ACTION}"
 
 # Available env
-# echo "INPUT_HOST: ${INPUT_HOST}"
+echo "INPUT_HOST: ${INPUT_HOST}"
 # echo "INPUT_PORT: ${INPUT_PORT}"
-# echo "INPUT_USER: ${INPUT_USER}"
-# echo "INPUT_PASS: ${INPUT_PASS}"
+echo "INPUT_USER: ${INPUT_USER}"
+echo "INPUT_PASS: ${INPUT_PASS}"
 # echo "INPUT_KEY: ${INPUT_KEY}"
-# echo "INPUT_RUN: ${INPUT_RUN}"
+echo "INPUT_RUN: ${INPUT_RUN}"
 
 CMD="${INPUT_RUN/$'\n'/' && '}"
 
@@ -35,7 +35,7 @@ else # Private key
     cat "/root/.ssh/config"
 
     ls -lha "/root/.ssh/"
-    sshpass ssh -v -o StrictHostKeyChecking=no -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
+    sshpass ssh -v -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p $INPUT_PORT $INPUT_USER@$INPUT_HOST "$CMD"
 fi
 
 echo "#################################################"
